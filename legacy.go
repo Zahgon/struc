@@ -7,10 +7,12 @@ import (
 
 // Deprecated. Use PackWithOptions.
 func PackWithOrder(w io.Writer, data interface{}, order binary.ByteOrder) error {
-	return PackWithOptions(w, data, &Options{Order: order})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Deprecated. Use UnpackWithOptions.
 func UnpackWithOrder(r io.Reader, data interface{}, order binary.ByteOrder) error {
-	return UnpackWithOptions(r, data, &Options{Order: order})
+	_ = "STUB: not implemented"
+	return nil
 }

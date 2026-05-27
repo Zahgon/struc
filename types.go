@@ -1,7 +1,6 @@
 package struc
 
 import (
-	"fmt"
 	"reflect"
 )
 
@@ -31,58 +30,11 @@ const (
 	CustomType
 )
 
-func (t Type) Resolve(options *Options) Type {
-	switch t {
-	case OffType:
-		switch options.PtrSize {
-		case 8:
-			return Int8
-		case 16:
-			return Int16
-		case 32:
-			return Int32
-		case 64:
-			return Int64
-		default:
-			panic(fmt.Sprintf("unsupported ptr bits: %d", options.PtrSize))
-		}
-	case SizeType:
-		switch options.PtrSize {
-		case 8:
-			return Uint8
-		case 16:
-			return Uint16
-		case 32:
-			return Uint32
-		case 64:
-			return Uint64
-		default:
-			panic(fmt.Sprintf("unsupported ptr bits: %d", options.PtrSize))
-		}
-	}
-	return t
-}
+func (t Type) Resolve(options *Options) Type { _ = "STUB: not implemented"; return *new(Type) }
 
-func (t Type) String() string {
-	return typeNames[t]
-}
+func (t Type) String() string { _ = "STUB: not implemented"; return "" }
 
-func (t Type) Size() int {
-	switch t {
-	case SizeType, OffType:
-		panic("Size_t/Off_t types must be converted to another type using options.PtrSize")
-	case Pad, String, Int8, Uint8, Bool:
-		return 1
-	case Int16, Uint16:
-		return 2
-	case Int32, Uint32, Float32:
-		return 4
-	case Int64, Uint64, Float64:
-		return 8
-	default:
-		panic("Cannot resolve size of type:" + t.String())
-	}
-}
+func (t Type) Size() int { _ = "STUB: not implemented"; return 0 }
 
 var typeLookup = map[string]Type{
 	"pad":     Pad,

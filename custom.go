@@ -17,17 +17,18 @@ type customFallback struct {
 }
 
 func (c customFallback) Pack(p []byte, val reflect.Value, opt *Options) (int, error) {
-	return c.custom.Pack(p, opt)
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (c customFallback) Unpack(r io.Reader, val reflect.Value, opt *Options) error {
-	return c.custom.Unpack(r, 1, opt)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (c customFallback) Sizeof(val reflect.Value, opt *Options) int {
-	return c.custom.Size(opt)
+	_ = "STUB: not implemented"
+	return 0
 }
 
-func (c customFallback) String() string {
-	return c.custom.String()
-}
+func (c customFallback) String() string { _ = "STUB: not implemented"; return "" }
